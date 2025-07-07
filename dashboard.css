@@ -1,0 +1,64 @@
+body {
+  background: #000;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px yellowgreen;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.dashboard-container {
+  padding: 30px;
+}
+
+.ticket-card {
+  background: #111;
+  border: 1px solid yellowgreen;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px yellowgreen;
+}
+
+.ticket-card button {
+  background: yellowgreen;
+  border: none;
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.ticket-card button:hover {
+  background: #a9ff4a;
+}
+.go-back {
+  background: yellowgreen;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 5px yellowgreen;
+}

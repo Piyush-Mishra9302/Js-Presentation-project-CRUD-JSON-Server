@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book On Call</title>
+  <link rel="stylesheet" href="callBooking.css" />
+</head>
+<body>
+  <div class="form-wrapper">
+    <div class="call-form">
+      <h2>Book Your Ticket on Call</h2>
+      <input type="tel" id="phone-number" placeholder="Enter your phone number" maxlength="10" />
+      <button onclick="submitCallRequest()">Submit</button>
+      <p id="call-confirmation"></p>
+      <button class="back-btn" onclick="goBack()">← Go Back</button>
+    </div>
+  </div>
+
+  <script>
+    function submitCallRequest() {
+      const number = document.getElementById('phone-number').value.trim();
+      const confirmation = document.getElementById('call-confirmation');
+
+      if (/^\d{10}$/.test(number)) {
+        confirmation.textContent = `✅ Thank you! We'll call you shortly at +91-${number}.`;
+        confirmation.style.color = 'yellowgreen';
+      } else {
+        confirmation.textContent = '❌ Please enter a valid 10-digit number.';
+        confirmation.style.color = 'red';
+      }
+    }
+
+    function goBack() {
+      window.location.href = 'home.html'; // change this to your homepage filename
+    }
+  </script>
+</body>
+</html>

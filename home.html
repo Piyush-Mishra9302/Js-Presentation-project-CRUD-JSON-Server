@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyShow - Movie Ticket Booking</title>
+  <!-- Swiper css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><img src="/logo.png" alt="logo"></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#Moviess">Movies</a></li>
+      <li><a href="#" onclick="dashboard()">Dashboard</a></li>
+    </ul>
+    <a href="#" class="book-btn" onclick="goToCallBooking()">Book On Call</a>
+  </nav>
+
+  <!-- Slide section -->
+    <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://www.filmyfenil.com/wp-content/uploads/2018/12/KGF-wallpaper.jpg" alt="KGF_C_1_Banner"></div>
+      <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyM-cJhqYREVIiRVJmxxMdDvIL8l_vIsjTaQ&s" alt="Pathan_Banner"></div>
+      <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtfgnA1RZNfdFxY6ySBuMBWwb8VoSXTBdafg&s" alt="Bahubali_2_Banner"></div>
+      <div class="swiper-slide"><img src="https://thesouthfirst.com/wp-content/uploads/2023/03/Fsbu4dbXgAAxU6k.jpg" alt="Dusara"></div>
+      <div class="swiper-slide"><img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/04/The-Matrix-poster-green.jpg" alt="The_Matrix_Banner"></div>
+      <div class="swiper-slide"><img src="https://img.onmanorama.com/content/dam/mm/en/entertainment/movie-reviews/images/2023/10/18/leo-poster.jpg" alt="Leo_Banner"></div>  
+      <div class="swiper-slide"><img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/03/Avengers-Endgame-Header.jpg?q=70&fit=contain&w=1200&h=628&dpr=1" alt="Avengers-Endgame-banner"></div>
+
+    </div>
+     <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Main Container -->
+  <div id="Moviess" class="main-container" >
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Filter by Language</h2>
+      <button onclick="filterByLang('All')">All</button>
+      <button onclick="filterByLang('Hindi')">Hindi</button>
+      <button onclick="filterByLang('English')">English</button>
+      <button onclick="filterByLang('South')">South</button>
+    </aside>
+
+    <!-- Movie Display Area -->
+    <main id="movies-container" class="movie-display"></main>
+  </div>
+
+ <footer class="footer">
+  <div class="footer-container">
+    <!-- Brand + Logo -->
+    <div class="footer-left">
+      <div class="brand">
+        <img src="logo.png" alt="MyShow Logo" class="footer-logo" />
+        <h3>MyShow <span class="emoji">🎬</span></h3>
+      </div>
+      <p>Book your favorite movie tickets anytime, anywhere.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#Moviess">Movies</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: support@myshow.com</p>
+      <p>Phone: +91-9999999999</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 MyShow. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+  <script src="/home.js"></script>
+
+  <!-- Swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/swiper.js"></script>
+
+    <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

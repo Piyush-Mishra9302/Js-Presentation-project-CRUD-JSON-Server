@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Seat</title>
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body>
+  <div class="booking-container">
+    <h2 id="movie-title">Booking for: </h2>
+
+    <form onsubmit="calculateTotal(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="number" id="age" placeholder="Your Age" required />
+      <select id="gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <input type="number" id="seats" placeholder="Number of Seats" min="1" required />
+      
+      <p id="total-price">Total: ₹0</p>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+
+ <script>
+  const params = new URLSearchParams(window.location.search);
+  const movieTitle = params.get('title');
+  document.getElementById("movie-title").textContent += movieTitle;
+
+  async function calculateTotal(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const age = parseInt(document.getElementById('age').value);
+    const gender = document.getElementById('gender').value;
+    const seats = parseInt(document.getElementById('seats').value);
+    const pricePerSeat = 240;
+    const total = seats * pricePerSeat;
+
+    if (seats > 0) {
+      // 🟢 1. Prepare the ticket text for download
+      const ticketText = `
+🎫 MyShow - Movie Ticket
+
+Name: ${name}
+Age: ${age}
+Gender: ${gender}
+Movie: ${movieTitle}
+Seats: ${seats}
+Price per seat: ₹${pricePerSeat}
+Total Price: ₹${total}
+
+Thank you for booking with MyShow!
+`;
+
+      // 🟢 2. Create and trigger file download
+      const blob = new Blob([ticketText], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `Ticket_${name}_${movieTitle}.txt`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // 🟢 3. Prepare booking data for database
+      const bookingData = {
+        name,
+        age,
+        gender,
+        movie: movieTitle,
+        seats,
+        totalPrice: total,
+        timestamp: new Date().toISOString()
+      };
+
+      // 🟢 4. Send data to your JSON Server
+      try {
+        const response = await fetch("http://localhost:3000/customers", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(bookingData)
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to store booking.");
+        }
+
+        const result = await response.json();
+        console.log("✅ Booking saved to JSON file:", result);
+        alert(`🎫 Booking confirmed for ${name}!\nTotal: ₹${total}`);
+      } catch (err) {
+        console.error("❌ Failed to store booking:", err);
+        alert("Something went wrong while saving booking. Please try again.");
+      }
+    }
+  }
+</script>
+
+
+</body>
+</html>
