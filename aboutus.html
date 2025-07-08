@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard - Booked Tickets</title>
-  <link rel="stylesheet" href="dashboard.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - MyShow</title>
+  <link rel="stylesheet" href="aboutus.css" />
 </head>
 <body>
-    <!-- Navbar -->
-  <nav class="navbar">
+     <nav class="navbar">
     <div class="logo"><img src="/logo.png" alt="logo"></div>
     <ul class="nav-links">
       <li><a href="/home.html">Home</a></li>
@@ -18,16 +18,33 @@
     <a href="#" class="book-btn" onclick="goToCallBooking()">Book On Call</a>
   </nav>
 
-  <!-- Tickets section -->
-  <div class="dashboard-container">
-    <h2>📋 Booked Tickets</h2>
-    <div id="ticket-list"></div>
-  </div>
-  <button onclick="window.location.href='home.html'" class="go-back">⬅️ Go Back</button>
+  <section class="about-hero">
+    <div class="overlay">
+      <h1>About MyShow 🎬</h1>
+      <p>Your one-stop platform for movie ticket booking</p>
+    </div>
+  </section>
 
-  <!-- Footer -->
+  <section class="about-content">
+    <h2>Who We Are</h2>
+    <p>
+      MyShow is a modern online platform that allows users to discover and book tickets for the latest movies across different languages. With a user-friendly interface and seamless experience, we bring the magic of cinema right to your fingertips.
+    </p>
 
- <footer class="footer">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>🎫 Easy & Fast Booking</li>
+      <li>📱 Mobile Friendly Experience</li>
+      <li>📍 Wide Coverage Across Regions</li>
+      <li>💬 24x7 Customer Support</li>
+    </ul>
+
+    <h2>Our Mission</h2>
+    <p>
+      We aim to make movie ticket booking enjoyable, quick, and reliable, while connecting fans with their favorite films and cinemas.
+    </p>
+  </section>
+   <footer class="footer">
   <div class="footer-container">
 
     <!-- Top Row: Logo & Socials -->
@@ -82,7 +99,7 @@
     <p>&copy; 2025 <span style="color: yellowgreen;">MyShow</span>. All rights reserved.</p>
   </div>
 </footer>
-  <script src="/home.js"></script>
-  <script src="dashboard.js"></script>
+
+<script src="/home.js"></script>
 </body>
 </html>

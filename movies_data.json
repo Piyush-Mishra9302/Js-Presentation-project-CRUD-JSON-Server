@@ -281,6 +281,26 @@
       "seats": 2,
       "totalPrice": 480,
       "timestamp": "2025-07-05T13:13:02.186Z"
+    },
+    {
+      "id": "54d0",
+      "name": "Arvind Tiwari",
+      "age": 25,
+      "gender": "Female",
+      "movie": "Drishyam 2",
+      "seats": 3,
+      "totalPrice": 720,
+      "timestamp": "2025-07-07T08:46:07.343Z"
+    },
+    {
+      "id": "73b9",
+      "name": "Arvind Tiwari",
+      "age": 25,
+      "gender": "Other",
+      "movie": "Jawan",
+      "seats": 4,
+      "totalPrice": 960,
+      "timestamp": "2025-07-07T08:46:19.350Z"
     }
   ]
 }
