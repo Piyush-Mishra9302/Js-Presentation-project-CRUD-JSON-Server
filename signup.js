@@ -83,4 +83,10 @@ let login = () => {
    return false; // Prevent form from submitting
 }
 
+let signupPrompt = () => {
+ 
+    alert("Please Login/Signup first");
+    // location.href = "index.html"; 
+    return false;
+};
 

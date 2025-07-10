@@ -301,6 +301,16 @@
       "seats": 4,
       "totalPrice": 960,
       "timestamp": "2025-07-07T08:46:19.350Z"
+    },
+    {
+      "id": "195b",
+      "name": "Deepak Shaw",
+      "age": 21,
+      "gender": "Male",
+      "movie": "Interstellar",
+      "seats": 3,
+      "totalPrice": 720,
+      "timestamp": "2025-07-10T09:49:00.691Z"
     }
   ]
 }
